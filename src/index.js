@@ -46,11 +46,11 @@ function stateChanger (state, action) {
 function renderApp(state, oldState={}){
   if (state === oldState) return 
   console.log('render app')
-  renderTitle(state.title)
-  renderContent(state.content)
+  renderTitle(state.title, oldState.title)
+  renderContent(state.content, oldState.content)
 }
 
-function renderTitle(title, oldTitle) {
+function renderTitle(title, oldTitle={}) {
   if (title === oldTitle) return
   console.log('render title')
   const titleDOM = document.getElementById('title')
